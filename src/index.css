@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%; /* Light gray-blue bg #f8f9fb text-background */
+    --foreground: 215 28% 17%; /* Deep teal text #1e293b text-foreground */
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 28% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 17%;
+
+    --primary: 0 0% 0%;          /* Stuntwerk Black – readable on white */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 56 100% 50%;    /* Stuntwerk Yellow #FFED00 – brand pop */
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%; /* Soft gray/blue #64748b */
+
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;      /* Soft border #e2e8f0 */
+    --input: 214 32% 91%;
+    --ring: 0 0% 0%;
+
+    --radius: 0.5rem;             /* Sharper 8px */
+
+    /* Sidebar Variables */
+    --sidebar-background: 0 0% 100%; /* Pure white sidebar */
+    --sidebar-foreground: 215 16% 47%; /* Muted text default */
+    --sidebar-primary: 0 0% 0%;        /* Stuntwerk Black for active state */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 95%;        /* Soft grey hover */
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 0 0% 0%;
+
+    --chart-1: 0 0% 10%;     /* Stuntwerk Black */
+    --chart-2: 49 100% 51%;  /* Yellow #ffd407 */
+    --chart-3: 31 89% 53%; /* Orange #f28c1c */
+    --chart-4: 329 96% 44%; /* Pink #da0473 */
+    --chart-5: 221 83% 53%; /* Blue */
+
+    --sidebar: 0 0% 100%;
+
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+    /* Flup Soft Shadows */
+    --shadow-sm: 0 2px 4px 0 rgba(149, 157, 165, 0.1);
+    --shadow: 0 4px 12px 0 rgba(149, 157, 165, 0.15);
+    --shadow-md: 0 8px 24px 0 rgba(149, 157, 165, 0.15);
+    --shadow-lg: 0 12px 28px 0 rgba(149, 157, 165, 0.2);
+
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 0 0% 100%;          /* White on dark = readable */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 56 100% 50%;      /* Stuntwerk Yellow brand pop */
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 32% 22%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 56 100% 50%;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 215 20% 65%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 217 32% 22%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217 32% 17%;
+    --sidebar-ring: 0 0% 100%;
+
+    --chart-1: 0 0% 90%;
+    --chart-2: 49 100% 60%;
+    --chart-3: 31 89% 60%;
+    --chart-4: 329 96% 55%;
+    --chart-5: 221 83% 65%;
+
+    --sidebar: 222 47% 11%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased font-sans;
+  }
+}
+
+@layer utilities {
+  .gradient-mesh {
+    background-image:
+      radial-gradient(at 27% 37%, hsl(56 100% 50% / 0.06) 0px, transparent 50%),
+      radial-gradient(at 97% 21%, hsl(0 0% 0% / 0.04) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsl(56 100% 50% / 0.04) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, hsl(0 0% 65% / 0.05) 0px, transparent 50%);
+  }
+
+  .dark .gradient-mesh {
+    background-image:
+      radial-gradient(at 27% 37%, hsl(56 100% 50% / 0.12) 0px, transparent 50%),
+      radial-gradient(at 97% 21%, hsl(0 0% 100% / 0.05) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsl(56 100% 60% / 0.08) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, hsl(0 0% 65% / 0.05) 0px, transparent 50%);
+  }
+}
